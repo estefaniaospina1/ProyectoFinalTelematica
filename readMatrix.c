@@ -162,10 +162,37 @@ for (u=0;u<rows;u++)
 { 
 for(p=0;p<cols;p++)
 {
-printf("%05.1f\t ",matrixcorr[u][p], p < cols-1 ? "\n" : "\n");
+printf("%lf%s",matrixcorr[u][p], p < cols-1 ? "\t" : "\n");
 }
 
 }
+
+
+//sacandole lo del otro lado
+
+for (u=0;u<rows;u++)
+{ 
+for(p=0;p<cols;p++)
+{
+matrixcorr[p][u] = matrixcorr[u][p];
+}
+
+}
+printf("completa\n");
+
+//pintandola
+
+for (u=0;u<rows;u++)
+{ 
+for(p=0;p<cols;p++)
+{
+printf("%lf%s",matrixcorr[u][p], p < cols-1 ? "\t" : "\n");
+}
+
+}
+
+
+
 }
 
 
@@ -189,10 +216,8 @@ main(){
 
 	  int **mat= matrixui();
 	  matrixcorr();
-	  printf("%d%",mat[0][1]);
-		//como imprimir alguna scosa
 
-		printf("%d%",maximo(mat[1][1], mat[2][2]));
+
 	
 	getchar();
 
